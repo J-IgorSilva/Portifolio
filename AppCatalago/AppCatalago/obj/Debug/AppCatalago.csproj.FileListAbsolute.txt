@@ -1,0 +1,7 @@
+D:\AppCatalago\AppCatalago\bin\Debug\AppCatalago.exe.config
+D:\AppCatalago\AppCatalago\bin\Debug\AppCatalago.exe
+D:\AppCatalago\AppCatalago\bin\Debug\AppCatalago.pdb
+D:\AppCatalago\AppCatalago\obj\Debug\AppCatalago.csproj.AssemblyReference.cache
+D:\AppCatalago\AppCatalago\obj\Debug\AppCatalago.csproj.CoreCompileInputs.cache
+D:\AppCatalago\AppCatalago\obj\Debug\AppCatalago.exe
+D:\AppCatalago\AppCatalago\obj\Debug\AppCatalago.pdb
