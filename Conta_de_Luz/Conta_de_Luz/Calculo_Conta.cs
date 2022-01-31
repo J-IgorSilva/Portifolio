@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 namespace Conta_de_Luz
 {
     class Calculo_Conta
+        //Retorna o Calculo por Kw/H
     {
         public float resumof;
-        public float Calculo(float luz, float km, float total)
+        public float Calculo(float luz, float kwh, float total)
         {
-            total = luz * km;
+            total = luz * kwh;
             return total;
         }
     }
