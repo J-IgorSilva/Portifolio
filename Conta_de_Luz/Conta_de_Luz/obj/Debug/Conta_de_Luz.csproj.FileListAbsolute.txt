@@ -4,3 +4,4 @@ D:\Conta_de_Luz\Conta_de_Luz\bin\Debug\Conta_de_Luz.pdb
 D:\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.csproj.CoreCompileInputs.cache
 D:\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.exe
 D:\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.pdb
+D:\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.csproj.AssemblyReference.cache

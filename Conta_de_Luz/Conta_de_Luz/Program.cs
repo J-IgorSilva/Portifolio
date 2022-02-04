@@ -6,38 +6,56 @@ using System.Threading.Tasks;
 
 namespace Conta_de_Luz
 {
-    class Program : Dados_pessoa 
+    class Program : Dadospessoa
     {
+
+
         static void Main(string[] args)
         {
             string name, mess;
             float luzz, khww;
+            Dadospessoa D = new Dadospessoa();
+            Calculo_Conta C = new Calculo_Conta();
 
-      
-            Dados_pessoa p = new Dados_pessoa();
-            Calculo_Conta c = new Calculo_Conta();
-
-            Console.WriteLine("Insira seu Nome e Mes da Para Calcularmos seu Consumo Mensal: ");
+            Console.WriteLine("Ola, Insira seu Nome Para começar: ");
             name = Console.ReadLine();
             Console.WriteLine("--------------------------");
-
+          
+            string[] escolha = new string[12];
+            {
+                escolha[0] = "Janeiro";
+                escolha[1] = "Fevereiro";
+                escolha[2] = "Março";
+                escolha[3] = "Abril";
+                escolha[4] = "Maio";
+                escolha[5] = "Junho";
+                escolha[6] = "Julho";
+                escolha[7] = "Agosto";
+                escolha[8] = "Setembro";
+                escolha[9] = "Outubro";
+                escolha[10] = "Novembro";
+                escolha[11] = "Dezembro";
+                for(int i = 0; i < 11; i++)
+                {
+                    Console.WriteLine(escolha[i]);
+                }
+            }
+        
             Console.Write("Qual o Mes da Conta Atual: ");
-            mess = Console.ReadLine();
-            Console.WriteLine("--------------------------");
-            
-            p.Nome(name);
 
-            p.mes(mess);
+            Console.WriteLine("--------------------------");
+
+            D.Nome(name);
 
             Console.WriteLine("Agora insira qual o valor total da sua Fatura, e Quantos Kw/H De consumo no mes: ");
 
             luzz = float.Parse(Console.ReadLine());
             khww = float.Parse(Console.ReadLine());
-           
 
-            c.Calculo(luzz, khww);
 
-            Console.WriteLine(c.total);
+            C.Calculo(luzz, khww);
+
+            Console.WriteLine(C.total);
             Console.ReadKey();
         }
     }
