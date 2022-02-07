@@ -9,9 +9,10 @@ namespace Conta_de_Luz
     class Program : Dadospessoa
     {
 
-
+        Total();
         static void Main(string[] args)
         {
+            
             string name, mess;
             float luzz, khww;
             Dadospessoa D = new Dadospessoa();
