@@ -15,8 +15,11 @@ namespace Conta_de_Luz
 
             switch (opcao)
             {
-                case 1:"Cadastro" 
-                       Console.WriteLine(); break;
+                case "1":
+                       Console.WriteLine// função para cadastro
+                       Console.WriteLine//calculo
+                        Console.WriteLine//agua
+                        Console.WriteLine//sair
                
                 case 0: System.Environment.Exit(0); break;
                 default: opcao(); break;
