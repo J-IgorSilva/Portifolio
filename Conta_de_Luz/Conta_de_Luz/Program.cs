@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace Conta_de_Luz
 {
+    
     class Program : Dadospessoa
     {
 
-
         static void Main(string[] args)
         {
+            Menu m = new Menu();
             
+
             string name, mess;
             float luzz, khww;
             Dadospessoa D = new Dadospessoa();
@@ -24,8 +26,10 @@ namespace Conta_de_Luz
             Console.WriteLine("--------------------------");
 
             Console.WriteLine($" Ola {name} Seja Bem Vindo! ");
+
             Console.WriteLine("Escolha Uma Opção Abaixo: ");
             Console.WriteLine();
+            m.menuu();
 
             string[] escolha = new string[12];
             {
@@ -63,6 +67,7 @@ namespace Conta_de_Luz
 
             Console.WriteLine(C.total);
             Console.ReadKey();
+          
         }
     }
 }

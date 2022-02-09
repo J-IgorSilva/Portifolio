@@ -12,7 +12,7 @@ namespace Conta_de_Luz
             return nome;
         }
         
-        public string mes(string nome_mes) // adiconar tratamento para exceçoes mes
+        public string Mes(string nome_mes) // adiconar tratamento para exceçoes mes
         {
             switch (nome_mes)
             {
@@ -55,9 +55,9 @@ namespace Conta_de_Luz
                 default:
                     Console.WriteLine("Insiria um Mes, Para Prossegui com o Calculo");
                     break;
+                    
 
             }
-
             return nome_mes;
         }
     }
