@@ -9,7 +9,7 @@ namespace Conta_de_Luz
     class Program : Dadospessoa
     {
 
-        Total();
+
         static void Main(string[] args)
         {
             
@@ -20,29 +20,34 @@ namespace Conta_de_Luz
 
             Console.WriteLine("Ola, Insira seu Nome Para começar: ");
             name = Console.ReadLine();
+            
             Console.WriteLine("--------------------------");
-          
+
+            Console.WriteLine($" Ola {name} Seja Bem Vindo! ");
+            Console.WriteLine("Escolha Uma Opção Abaixo: ");
+            Console.WriteLine();
+
             string[] escolha = new string[12];
             {
-                escolha[0] = "Janeiro";
-                escolha[1] = "Fevereiro";
-                escolha[2] = "Março";
-                escolha[3] = "Abril";
-                escolha[4] = "Maio";
-                escolha[5] = "Junho";
-                escolha[6] = "Julho";
-                escolha[7] = "Agosto";
-                escolha[8] = "Setembro";
-                escolha[9] = "Outubro";
-                escolha[10] = "Novembro";
-                escolha[11] = "Dezembro";
+                escolha[0] = "1 - Janeiro";
+                escolha[1] = "2 - Fevereiro";
+                escolha[2] = "3 - Março";
+                escolha[3] = "4 - Abril";
+                escolha[4] = "5 - Maio";
+                escolha[5] = "6 - Junho";
+                escolha[6] = "7 - Julho";
+                escolha[7] = "8 - Agosto";
+                escolha[8] = "9 - Setembro";
+                escolha[9] = "10 - Outubro";
+                escolha[10] ="11 - Novembro";
+                escolha[11] = "12 - Dezembro";
                 for(int i = 0; i < 11; i++)
                 {
                     Console.WriteLine(escolha[i]);
                 }
             }
         
-            Console.Write("Qual o Mes da Conta Atual: ");
+            
 
             Console.WriteLine("--------------------------");
 
