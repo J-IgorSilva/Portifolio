@@ -14,12 +14,15 @@ namespace Conta_de_Luz
             Console.WriteLine("2 Calculo da Conta de Luz");
            
             Console.WriteLine("0 Sair");
+        
+      
 
             short escolha = short.Parse(Console.ReadLine());
 
-            switch (escolha)
-            {
-                case 1: InsertName();
+            switch (escolha){
+                case 1:
+                    InsertName();
+                 
                     break;
                 case 2: InsertConta();
                     break;
@@ -27,37 +30,38 @@ namespace Conta_de_Luz
                     break;
 
             }
-            static void InsertName()
-            {
-                Console.Clear();
-                Console.WriteLine("Ola, Vamos Iniciar sua consulta a Seguir ");
-
-                Console.WriteLine();
-
-                Console.WriteLine("Insira seu Nome e Sobrenome");
-
-                var name = Console.ReadLine();
-
-
-            }
-            public void InsertConta()
-            {
-                Console.Clear();
-
-                Console.WriteLine("Insira o Valor do Consumo, Sem os Impostos");
-
-                float ligth = float.Parse(Console.ReadLine());
-
-                Console.WriteLine("Digite Quantos Kw/H  Você Consumiu");
-
-                float kwh = float.Parse(Console.ReadLine());
-
-                float total = ligth / kwh;
-
-                Console.WriteLine($"O Valor Pago Por KH/W é de ${total} Sem Impostos.");
-
-            }
+         
+        
         }
-       
+        static void InsertName()
+        {
+            Console.Clear();
+            Console.WriteLine("Ola, Vamos Iniciar sua consulta a Seguir ");
+
+            Console.WriteLine();
+
+            Console.WriteLine("Insira seu Nome e Sobrenome");
+
+            var name = Console.ReadLine();
+            
+           
+        }
+        public void InsertConta()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Insira o Valor do Consumo, Sem os Impostos");
+
+            float ligth = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite Quantos Kw/H  Você Consumiu");
+
+            float kwh = float.Parse(Console.ReadLine());
+
+            float total = ligth / kwh;
+
+            Console.WriteLine($"O Valor Pago Por KH/W é de ${total} Sem Impostos.");
+
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Conta_de_Luz
         static void Main(string[] args)
         {
             Menu m = new Menu();
-            m.Menuu();
+            m.Menuu(); 
             
         }
     }
