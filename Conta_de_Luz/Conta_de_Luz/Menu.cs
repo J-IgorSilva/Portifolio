@@ -43,7 +43,10 @@ namespace Conta_de_Luz
             Console.WriteLine("Insira seu Nome e Sobrenome");
 
             var name = Console.ReadLine();
-            
+            if (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("Escreva nome e sobrenome"); // fazer uma tratativa melhor do metodo de excceção.
+            }
            
         }
         public void InsertConta()
