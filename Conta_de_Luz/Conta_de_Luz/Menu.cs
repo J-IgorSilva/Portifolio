@@ -12,6 +12,7 @@ namespace Conta_de_Luz
 
             Console.WriteLine("1 Cadastro");
             Console.WriteLine("2 Calculo da Conta de Luz");
+            Console.WriteLine("3 Agendar Pagamento");
            
             Console.WriteLine("0 Sair");
         
@@ -25,6 +26,9 @@ namespace Conta_de_Luz
                  
                     break;
                 case 2: InsertConta();
+                    break;
+                case 3:
+                    InsertPay();
                     break;
                 case 0: System.Environment.Exit(0);
                     break;
@@ -67,6 +71,26 @@ namespace Conta_de_Luz
 
             Console.WriteLine($"O Valor Pago Por KH/W é de ${total} Sem Impostos.");
 
+        }
+        public void InsertPay()
+        {
+            Console.Clear();
+
+            InsertName();
+
+            int year = 0, month = 0, day = 0;
+
+            Console.WriteLine("Insira o Dia, o Mes, e o Ano, para agendarmos seu pagamento: ");
+
+            Console.WriteLine();
+
+            day = int.Parse(Console.ReadLine());
+            month = int.Parse(Console.ReadLine());
+            year = int.Parse(Console.ReadLine());
+
+            DateTime data = new DateTime(day, month, year).ToLocalTime();
+
+            Console.WriteLine($"Pagamento Agendado Para dia{day} do mes {month} de {year}");
         }
     }
 }
