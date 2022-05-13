@@ -1,0 +1,16 @@
+D:\Cardapio\Cardapio\bin\Debug\net5.0\CardapioConsole.exe
+D:\Cardapio\Cardapio\bin\Debug\net5.0\CardapioConsole.deps.json
+D:\Cardapio\Cardapio\bin\Debug\net5.0\CardapioConsole.runtimeconfig.json
+D:\Cardapio\Cardapio\bin\Debug\net5.0\CardapioConsole.runtimeconfig.dev.json
+D:\Cardapio\Cardapio\bin\Debug\net5.0\CardapioConsole.dll
+D:\Cardapio\Cardapio\bin\Debug\net5.0\ref\CardapioConsole.dll
+D:\Cardapio\Cardapio\bin\Debug\net5.0\CardapioConsole.pdb
+D:\Cardapio\Cardapio\obj\Debug\net5.0\CardapioConsole.csproj.AssemblyReference.cache
+D:\Cardapio\Cardapio\obj\Debug\net5.0\CardapioConsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cardapio\Cardapio\obj\Debug\net5.0\CardapioConsole.AssemblyInfoInputs.cache
+D:\Cardapio\Cardapio\obj\Debug\net5.0\CardapioConsole.AssemblyInfo.cs
+D:\Cardapio\Cardapio\obj\Debug\net5.0\CardapioConsole.csproj.CoreCompileInputs.cache
+D:\Cardapio\Cardapio\obj\Debug\net5.0\CardapioConsole.dll
+D:\Cardapio\Cardapio\obj\Debug\net5.0\ref\CardapioConsole.dll
+D:\Cardapio\Cardapio\obj\Debug\net5.0\CardapioConsole.pdb
+D:\Cardapio\Cardapio\obj\Debug\net5.0\CardapioConsole.genruntimeconfig.cache
