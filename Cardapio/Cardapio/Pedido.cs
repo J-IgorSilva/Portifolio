@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CardapioConsole;
+using Nancy.Json;
 
 namespace CardapioConsole
 {
@@ -17,6 +14,27 @@ namespace CardapioConsole
         {
             Produtos = new List<ProdutoPedido>();
         }
+
+        public void AdicionarProduto(ProdutoPedido pedido)
+        {
+            Produtos.Add(pedido);
+            var valorProduto = pedido.Produto.Preco;
+            ValorTotal = valorProduto * pedido.Quantidade + ValorTotal;
+        }
+
+        public void ImprimirPedido()
+        {
+           foreach (var produto in Produtos)
+            {
+                Console.WriteLine();
+            }
+        }
+
+        public void ImprimirPedidoJson()
+        {
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            Console.WriteLine(serializer.Serialize(this));
+        }
     }
 
     public class ProdutoPedido
@@ -25,9 +43,10 @@ namespace CardapioConsole
 
         public int Quantidade { get; set; }
 
-        public ProdutoPedido(Produto produto)
+        public ProdutoPedido(Produto produto, int quantidade)
         {
             Produto = produto;
+            Quantidade = quantidade;
         }
     }
 }

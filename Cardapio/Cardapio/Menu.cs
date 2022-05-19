@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nancy.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,6 @@ namespace CardapioConsole
     public class Menu
     {
         private static readonly int[] MesasValidas = { 1, 2, 3, 4 };
-        private static readonly int[] CodigoPedido = { 100, 101, 102, 103, 104, 999 };
 
         public static void MenuCardapio()
         {
@@ -21,20 +21,40 @@ namespace CardapioConsole
 
             if (DesejaRealizarPedido())
             {
-                var numeroMesa = NumeroDaMesa();
-                Cardapio.ImprimirCardapio();
-                var codigoDoProduto = int.Parse(Console.ReadLine());
-                var pedido = new Pedido();
 
-                while (codigoDoProduto != 999)
-                {
-                    var produto = Cardapio.ObterProdutoPeloCodigo(codigoDoProduto);
-                    var produtoPedido = new ProdutoPedido(produto);
-                    pedido.Produtos.Add(produtoPedido);
-                    codigoDoProduto = int.Parse(Console.ReadLine());
-                }
+                var numeroMesa = NumeroDaMesa();
+                var pedido = FazerPedido();
+                pedido.ImprimirPedido();
+                Console.WriteLine("IMPRESSÃO DO PEDIDO EM JSON");
+                pedido.ImprimirPedidoJson();
             }
             Environment.Exit(0);
+        }
+        private static Pedido FazerPedido()
+        {
+            var pedidoConcluido = false;
+            var pedido = new Pedido();
+
+            while (!pedidoConcluido)
+            {
+                Cardapio.ImprimirCardapio();
+                Console.WriteLine("QUAL PRODUTO VOCÊ DESEJA?\n");
+                var codigoDoProduto = int.Parse(Console.ReadLine());
+
+                if (codigoDoProduto == 999)
+                {
+                    pedidoConcluido = true;
+                    continue;
+                }
+
+                Console.WriteLine("\nQUANTAS UNIDADES?\n");
+                var quantidadeDoProduto = int.Parse(Console.ReadLine());
+                var produto = Cardapio.ObterProdutoPeloCodigo(codigoDoProduto);
+                var produtoPedido = new ProdutoPedido(produto, quantidadeDoProduto);
+                pedido.AdicionarProduto(produtoPedido);
+                Console.Clear();
+            }
+            return pedido;
         }
 
         private static bool DesejaRealizarPedido()
@@ -64,31 +84,9 @@ namespace CardapioConsole
             return numeroMesa;
         }      
 
-        private static void InformeCodigo()
-        {
-            Console.WriteLine("Informe o Codigo: ");
-            int digito = int.Parse(Console.ReadLine());
-            var VerDigito = Array.Exists(CodigoPedido, x => x == digito);
-            if (VerDigito == true)
-            {
-
-            }
-            else
-            {
-                Console.WriteLine("Codigo não exite\n");
-
-                InformeCodigo();
-            }
-        }
-
         private static bool ValidarNumeroMesa(int numeroMesa)
         {
             return MesasValidas.Contains(numeroMesa);
-        }
-
-        private static bool NumeroPedidoCliente(int numeroPedido)
-        {
-            return CodigoPedido.Contains(numeroPedido);
         }
 
         public static void ImprimirOpcoesMenu()

@@ -18,5 +18,10 @@ namespace CardapioConsole
             Descricao = descricao;
             Preco = preco;
         }
+        public Produto(decimal preco)
+        {
+            Preco = preco;
+        }
+
     }
 }
