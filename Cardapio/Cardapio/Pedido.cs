@@ -32,7 +32,7 @@ namespace CardapioConsole
         {
             foreach (var imprimirComMesa in Produtos)
             {
-                Console.WriteLine($"\n1- { imprimirComMesa.Produto.Descricao} - Com valor total de R$: {this.ValorTotal}\n");               
+                Console.WriteLine($"\n1- { imprimirComMesa.Produto.Descricao} - COM VALOR TOTAL DE R$: {this.ValorTotal}\n");               
             }
         }
     }
