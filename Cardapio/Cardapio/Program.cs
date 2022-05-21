@@ -6,7 +6,7 @@ namespace CardapioConsole
     {
         static void Main(string[] args)
         {
-           Menu.MenuCardapio();
+           Menu.MenuCardapio();          
            Console.ReadLine();
         }
     }

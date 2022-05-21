@@ -4,7 +4,7 @@ using Nancy.Json;
 
 namespace CardapioConsole
 {
-    public class Pedido
+    public class Pedido : Menu
     {
         public decimal ValorTotal { get; set; }
 
@@ -20,20 +20,20 @@ namespace CardapioConsole
             Produtos.Add(pedido);
             var valorProduto = pedido.Produto.Preco;
             ValorTotal = valorProduto * pedido.Quantidade + ValorTotal;
+            Console.WriteLine($"dfs{pedido}{pedido.Quantidade}{ValorTotal}");
         }
-
-        public void ImprimirPedido()
-        {
-           foreach (var produto in Produtos)
-            {
-                Console.WriteLine();
-            }
-        }
-
+       
         public void ImprimirPedidoJson()
         {
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             Console.WriteLine(serializer.Serialize(this));
+        }
+        public void ImprimirPedidoComMesa()
+        {
+            foreach (var imprimirComMesa in Produtos)
+            {
+                Console.WriteLine($"\n1- { imprimirComMesa.Produto.Descricao} - Com valor total de R$: {this.ValorTotal}\n");               
+            }
         }
     }
 

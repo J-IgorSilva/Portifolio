@@ -16,20 +16,21 @@ namespace CardapioConsole
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.ForegroundColor = ConsoleColor.White;
-
             ImprimirOpcoesMenu();
-
+            
             if (DesejaRealizarPedido())
             {
-
                 var numeroMesa = NumeroDaMesa();
                 var pedido = FazerPedido();
-                pedido.ImprimirPedido();
+                Console.WriteLine($"A mesa {numeroMesa} pediu os seguintes itens:");
+                pedido.ImprimirPedidoComMesa();
                 Console.WriteLine("IMPRESSÃO DO PEDIDO EM JSON");
                 pedido.ImprimirPedidoJson();
             }
             Environment.Exit(0);
         }
+        
+
         private static Pedido FazerPedido()
         {
             var pedidoConcluido = false;
@@ -38,7 +39,7 @@ namespace CardapioConsole
             while (!pedidoConcluido)
             {
                 Cardapio.ImprimirCardapio();
-                Console.WriteLine("QUAL PRODUTO VOCÊ DESEJA?\n");
+                Console.WriteLine("\nQUAL PRODUTO VOCÊ DESEJA?\n");
                 var codigoDoProduto = int.Parse(Console.ReadLine());
 
                 if (codigoDoProduto == 999)
@@ -82,8 +83,8 @@ namespace CardapioConsole
             }
 
             return numeroMesa;
-        }      
-
+        }
+        
         private static bool ValidarNumeroMesa(int numeroMesa)
         {
             return MesasValidas.Contains(numeroMesa);

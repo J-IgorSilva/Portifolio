@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Cardapio\\Cardapio\\CardapioConsole.csproj": {}
+    "D:\\Portifolio\\Cardapio\\Cardapio\\CardapioConsole.csproj": {}
   },
   "projects": {
-    "D:\\Cardapio\\Cardapio\\CardapioConsole.csproj": {
+    "D:\\Portifolio\\Cardapio\\Cardapio\\CardapioConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Cardapio\\Cardapio\\CardapioConsole.csproj",
+        "projectUniqueName": "D:\\Portifolio\\Cardapio\\Cardapio\\CardapioConsole.csproj",
         "projectName": "CardapioConsole",
-        "projectPath": "D:\\Cardapio\\Cardapio\\CardapioConsole.csproj",
+        "projectPath": "D:\\Portifolio\\Cardapio\\Cardapio\\CardapioConsole.csproj",
         "packagesPath": "C:\\Users\\IgorxDiana\\.nuget\\packages\\",
-        "outputPath": "D:\\Cardapio\\Cardapio\\obj\\",
+        "outputPath": "D:\\Portifolio\\Cardapio\\Cardapio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\IgorxDiana\\AppData\\Roaming\\NuGet\\NuGet.Config",

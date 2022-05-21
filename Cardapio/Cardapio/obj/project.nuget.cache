@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ANHmZ7sbt3NRkcNaFg1jVQR7NXfnAKru7QTKpgdZIEU5sqitmWdy7YyGt8LITld+rtUgo0ZVMUhbsr4SV5iFyQ==",
+  "dgSpecHash": "tjFxeTlvPSE0X9VMRGcdSybZBNhVUgA1yViW9tpF5mRr+KVyIOoQQzgLpLasrdyIgI+GQ2Ft9Pi+9cqbEeUhJw==",
   "success": true,
-  "projectFilePath": "D:\\Cardapio\\Cardapio\\CardapioConsole.csproj",
+  "projectFilePath": "D:\\Portifolio\\Cardapio\\Cardapio\\CardapioConsole.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\IgorxDiana\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\IgorxDiana\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",
