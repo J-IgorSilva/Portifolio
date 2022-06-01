@@ -22,7 +22,7 @@ namespace CardapioConsole
             {
                 var numeroMesa = NumeroDaMesa();
                 var pedido = FazerPedido();
-                Console.WriteLine($"A mesa {numeroMesa} pediu os seguintes itens:");
+                Console.WriteLine($"A MESA {numeroMesa} PEDIU OS SEGUINTES ITENS:");
                 pedido.ImprimirPedidoComMesa();
                 Console.WriteLine("IMPRESSÃO DO PEDIDO EM JSON");
                 pedido.ImprimirPedidoJson();
