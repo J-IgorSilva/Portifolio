@@ -1,0 +1,9 @@
+D:\Pokemon\Pokemon.Data\bin\Debug\netcoreapp3.1\Pokemon.Data.deps.json
+D:\Pokemon\Pokemon.Data\bin\Debug\netcoreapp3.1\Pokemon.Data.dll
+D:\Pokemon\Pokemon.Data\bin\Debug\netcoreapp3.1\Pokemon.Data.pdb
+D:\Pokemon\Pokemon.Data\obj\Debug\netcoreapp3.1\Pokemon.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pokemon\Pokemon.Data\obj\Debug\netcoreapp3.1\Pokemon.Data.AssemblyInfoInputs.cache
+D:\Pokemon\Pokemon.Data\obj\Debug\netcoreapp3.1\Pokemon.Data.AssemblyInfo.cs
+D:\Pokemon\Pokemon.Data\obj\Debug\netcoreapp3.1\Pokemon.Data.csproj.CoreCompileInputs.cache
+D:\Pokemon\Pokemon.Data\obj\Debug\netcoreapp3.1\Pokemon.Data.dll
+D:\Pokemon\Pokemon.Data\obj\Debug\netcoreapp3.1\Pokemon.Data.pdb
