@@ -1,27 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Pokemon.Business.DTOs;
-using Pokemon.Business.Interfaces;
-using Pokemon.Business.Models;
-using Pokemon.Business.Services;
+using Pokemon.Application.Contracts.Pokemon.Request;
+using Pokemon.Application.Services;
+using System.Threading.Tasks;
 
 namespace Pokemon.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-
+    [Route("[controller]")]
     public class PokemonController : ControllerBase
     {
-        private IPokemonService _service;
-        public PokemonController(IPokemonService service)
+        private readonly PokemonService _service;
+
+        public PokemonController(PokemonService service)
         {
-            _service = service; 
+            _service = service;
         }
 
-
         [HttpPost()]
-        public PokemonDTO Create(PokemonDTO pokemonDto)
+        public async Task<ActionResult> Create(PokemonPostRequest pokemonPostRequest)
         {
-            return _service.Create(pokemonDto);
+            var pokemonPostResponse = await _service.CreateAsync(pokemonPostRequest);
+            return Ok(pokemonPostResponse);
+        }
+
+        [HttpGet()]
+        public async Task<ActionResult> GetAll()
+        {
+            var pokemonPostResponseList = await _service.GetAllAsync();
+            return Ok(pokemonPostResponseList);
         }
     }
 }

@@ -3,7 +3,7 @@
 namespace Conta_de_Luz
 {
 
-    class Program
+    public class Program
     {
 
         static void Main(string[] args)

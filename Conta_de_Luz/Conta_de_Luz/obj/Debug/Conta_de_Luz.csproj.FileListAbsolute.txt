@@ -12,3 +12,10 @@ D:\Portifolio\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.pdb
 D:\Portifolio\Conta_de_Luz\Conta_de_Luz\bin\Debug\Conta_de_Luz.exe.config
 D:\Portifolio\Conta_de_Luz\Conta_de_Luz\bin\Debug\Conta_de_Luz.exe
 D:\Portifolio\Conta_de_Luz\Conta_de_Luz\bin\Debug\Conta_de_Luz.pdb
+D:\GITHUB\Portifolio\Conta_de_Luz\Conta_de_Luz\bin\Debug\Conta_de_Luz.exe.config
+D:\GITHUB\Portifolio\Conta_de_Luz\Conta_de_Luz\bin\Debug\Conta_de_Luz.exe
+D:\GITHUB\Portifolio\Conta_de_Luz\Conta_de_Luz\bin\Debug\Conta_de_Luz.pdb
+D:\GITHUB\Portifolio\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.csproj.AssemblyReference.cache
+D:\GITHUB\Portifolio\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.csproj.CoreCompileInputs.cache
+D:\GITHUB\Portifolio\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.exe
+D:\GITHUB\Portifolio\Conta_de_Luz\Conta_de_Luz\obj\Debug\Conta_de_Luz.pdb
