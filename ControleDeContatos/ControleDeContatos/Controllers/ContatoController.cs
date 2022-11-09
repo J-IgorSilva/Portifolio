@@ -1,6 +1,7 @@
 ﻿using ControleDeContatos.Models;
 using ControleDeContatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace ControleDeContatos.Controllers
 {
@@ -13,7 +14,8 @@ namespace ControleDeContatos.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            List<ContatoModel> listagemContatos = _contatoRepositorio.ListarTodosContatos();
+            return View(listagemContatos);
         }
         public IActionResult CriarContato()
         {
