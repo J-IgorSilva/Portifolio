@@ -16,6 +16,10 @@ namespace ControleDeContatos.Repositorio
         {
             return _bancoContext.Contatos.ToList();
         }
+        public ContatoModel EditarPorId(int id)
+        {
+            return _bancoContext.Contatos.FirstOrDefault(TodosContatos => TodosContatos.Id == id);
+        }
         public ContatoModel Adicionar(ContatoModel contato)
         {
             _bancoContext.Contatos.Add(contato);
@@ -23,5 +27,6 @@ namespace ControleDeContatos.Repositorio
             return contato;
         }
 
+       
     }
 }
