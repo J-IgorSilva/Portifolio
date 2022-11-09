@@ -27,6 +27,18 @@ namespace ControleDeContatos.Repositorio
             return contato;
         }
 
-       
+        public ContatoModel EditarContato(ContatoModel contato)
+        {
+            ContatoModel editarContatoDb = EditarPorId(contato.Id);
+            if (editarContatoDb == null) throw new System.Exception("Ñão foi possivel alterar esse contato");
+            editarContatoDb.Nome = contato.Nome;
+            editarContatoDb.Email = contato.Email;
+            editarContatoDb.Celular = contato.Celular;
+
+            _bancoContext.Contatos.Update(editarContatoDb);
+            _bancoContext.SaveChanges();
+
+            return editarContatoDb;
+        }
     }
 }
