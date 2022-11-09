@@ -1,9 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ControleDeContatos.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ControleDeContatos.Controllers
 {
     public class ContatoController : Controller
     {
+        public private readonly
+        public ContatoController()
+        {
+
+        }
         public IActionResult Index()
         {
             return View();
@@ -19,6 +25,12 @@ namespace ControleDeContatos.Controllers
         public IActionResult ApagarContato()
         {
             return View();
+        }
+        
+        [HttpPost]
+        public IActionResult Criar(ContatoModel contato)
+        {
+
         }
     }
 }
