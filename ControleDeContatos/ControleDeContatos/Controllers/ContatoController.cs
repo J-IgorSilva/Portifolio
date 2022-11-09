@@ -21,9 +21,10 @@ namespace ControleDeContatos.Controllers
         {
             return View();
         }
-        public IActionResult EditarContato()
+        public IActionResult EditarContato(int id)
         {
-            return View();
+            ContatoModel contatoEditado =_contatoRepositorio.EditarPorId(id);
+            return View(contatoEditado);
         }
         public IActionResult ApagarContato()
         {
@@ -32,6 +33,13 @@ namespace ControleDeContatos.Controllers
         
         [HttpPost]
         public IActionResult Criar(ContatoModel contato)
+        {
+            _contatoRepositorio.Adicionar(contato);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult EditarContato(ContatoModel contato)
         {
             _contatoRepositorio.Adicionar(contato);
             return RedirectToAction("Index");
