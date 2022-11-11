@@ -26,9 +26,15 @@ namespace ControleDeContatos.Controllers
             ContatoModel contatoEditado =_contatoRepositorio.EditarPorId(id);
             return View(contatoEditado);
         }
-        public IActionResult ApagarContato()
+        public IActionResult ApagarContato(int id) //Confirmação se quer apagar o contato
         {
-            return View();
+            ContatoModel contatoEditado = _contatoRepositorio.EditarPorId(id);
+            return View(contatoEditado);
+        }
+        public IActionResult Apagar(int id)
+        {
+            _contatoRepositorio.Apagar(id);
+            return RedirectToAction("Index"); //Apos apagar volta para a Index
         }
         
         [HttpPost]

@@ -1,5 +1,6 @@
 ﻿using ControleDeContatos.Data;
 using ControleDeContatos.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -42,6 +43,16 @@ namespace ControleDeContatos.Repositorio
             _bancoContext.SaveChanges();
 
             return editarContatoDb;
+        }
+
+        public bool Apagar(int id)
+        {
+            ContatoModel editarContatoDb = EditarPorId(id);
+            if (editarContatoDb == null) throw new System.Exception("Ñão foi possivel encontrar esse contato");
+
+            _bancoContext.Contatos.Remove(editarContatoDb);
+            _bancoContext.SaveChanges();
+            return true;
         }
     }
 }
