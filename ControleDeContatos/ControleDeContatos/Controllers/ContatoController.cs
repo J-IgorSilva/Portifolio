@@ -18,9 +18,16 @@ namespace ControleDeContatos.Controllers
             List<ContatoModel> listagemContatos = _contatoRepositorio.ListarTodosContatos();
             return View(listagemContatos);
         }
-        public IActionResult CriarContato()
+        public IActionResult CriarContato(ContatoModel contato)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                _contatoRepositorio.Adicionar(contato);
+                return RedirectToAction("Index");
+            }
+
+            return View(contato);
+           
         }
         public IActionResult EditarContato(int id) // mostra o contato na pagina
         {
