@@ -1,7 +1,6 @@
 ﻿using ControleDeContatos.Models;
 using ControleDeContatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Collections.Generic;
 
 
@@ -23,7 +22,7 @@ namespace ControleDeContatos.Controllers
         {
             return View();
         }
-        public IActionResult EditarContato(int id)
+        public IActionResult EditarContato(int id) // mostra o contato na pagina
         {
             ContatoModel contatoEditado =_contatoRepositorio.EditarPorId(id);
             return View(contatoEditado);
@@ -48,7 +47,7 @@ namespace ControleDeContatos.Controllers
                 return RedirectToAction("Index");
             }
 
-           return View(contato);
+            return View(contato);
         }
 
         [HttpPost]
