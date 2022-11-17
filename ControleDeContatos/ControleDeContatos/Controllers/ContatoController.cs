@@ -19,13 +19,22 @@ namespace ControleDeContatos.Controllers
         }
         public IActionResult CriarContato(ContatoModel contato)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _contatoRepositorio.Adicionar(contato);
+                if (ModelState.IsValid)
+                {
+                    _contatoRepositorio.Adicionar(contato);
+                    TempData["MensagemDeSucesso"] = "Contato Cadastrado com sucesso";
+                    return RedirectToAction("Index");
+                }
+                return View(contato);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar seu contato{erro.Message}";
                 return RedirectToAction("Index");
             }
-            return View(contato);
-            
+
         }
         public IActionResult EditarContato(int id)
         {
