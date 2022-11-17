@@ -1,11 +1,9 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100&display=swap');
+
 
 /* Provide sufficient contrast against white background */
 a {
@@ -29,7 +27,7 @@ a {
 html {
   font-size: 14px;
 }
-@media (min-width: 768px) {
+@media (min-width:auto) {
   html {
     font-size: 16px;
   }
@@ -81,4 +79,28 @@ body {
     border-radius: 50%;
     width: 30px;
     height: 31px;
+}
+.card-footer {
+    background-color: darkgrey;
+}
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    color: #000000;
+}
+.card-text {
+    font-family: 'Montserrat', ital;
+    color: #000000;
+}
+.icon-rede {
+    width: 50px;
+    position: center;
+    margin-left: 80px;
+    float: initial;
+    display: inline;
+}
+.col {
+    display: inline-block;
+    position: center;
+    
 }
