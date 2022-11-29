@@ -1,7 +1,12 @@
+using EntregaAgua.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<Contexto>(options => options.UseSqlServer(("Data Source=DESKTOP-PPLJL4V\\SQLIGOR;Database=DB_TabelaDeEntregaDeAgua;Integrated Security=True")));
 
 var app = builder.Build();
 
