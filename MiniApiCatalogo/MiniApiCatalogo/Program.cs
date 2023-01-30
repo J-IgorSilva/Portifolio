@@ -1,3 +1,6 @@
+using MiniApiCatalogo.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +9,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var conexaoPadrao = builder.Configuration.GetConnectionString("DefaultConnetion");
+
+builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(conexaoPadrao,ServerVersion.AutoDetect(conexaoPadrao)));
 
 var app = builder.Build();
 
