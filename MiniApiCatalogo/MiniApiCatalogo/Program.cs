@@ -1,5 +1,6 @@
 using MiniApiCatalogo.Context;
 using Microsoft.EntityFrameworkCore;
+using MiniApiCatalogo.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,15 @@ var conexaoPadrao = builder.Configuration.GetConnectionString("DefaultConnetion"
 builder.Services.AddDbContext<AppDbContext>(options => options.UseMySql(conexaoPadrao,ServerVersion.AutoDetect(conexaoPadrao)));
 
 var app = builder.Build();
+
+app.MapGet("/", () => "Catalogo de Produtos");
+
+app.MapPost("/categorias", async (Categoria categoria, AppDbContext db) =>
+{
+    db.Categorias.Add(categoria);
+    await db.SaveChangesAsync();
+    return Results.Created($"/categorias/{categoria.CategoriaId}", categoria);
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
