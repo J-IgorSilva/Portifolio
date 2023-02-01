@@ -1,4 +1,6 @@
-﻿namespace MiniApiCatalogo.Models
+﻿using System.Text.Json.Serialization;
+
+namespace MiniApiCatalogo.Models
 {
     public class Produto
     {
@@ -12,6 +14,8 @@
         public int Estoque { get; set; }
 
         public int CategoriaId { get; set; }
+
+        [JsonIgnore]
         public Categoria? Categorias { get; set; }
 
     }

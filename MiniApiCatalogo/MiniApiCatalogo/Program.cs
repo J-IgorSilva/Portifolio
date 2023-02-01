@@ -63,12 +63,14 @@ app.MapDelete("/categorias/{ id:int}", async (int id, Categoria categoria, AppDb
 });
 //-------------EndPoitProdutos--------------------------------
 
-app.MapPost("/Produtos", async (Produto produto, AppDbContext db) =>
+app.MapPost("/produtos", async (Produto produto, AppDbContext db) =>
 {
     db.Produtos.Add(produto);
     await db.SaveChangesAsync();
-    return Results.Created($"/categorias/{produto.ProdutoId}", produto);
+    return Results.Created($"/produtos/{produto.ProdutoId}", produto);
 });
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
