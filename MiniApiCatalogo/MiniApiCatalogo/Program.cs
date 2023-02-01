@@ -50,6 +50,25 @@ app.MapPut("/categorias/{ id:int}", async (int id, Categoria categoria, AppDbCon
     await db.SaveChangesAsync();
     return Results.Ok(id);
 });
+
+app.MapDelete("/categorias/{ id:int}", async (int id, Categoria categoria, AppDbContext db) =>
+{
+    if (await db.Categorias.FindAsync(id) != null)
+    {
+        return Results.NotFound("Categoria Inesistente");
+    }
+    db.Categorias.Remove(categoria);
+    await db.SaveChangesAsync();
+    return Results.NoContent();
+});
+//-------------EndPoitProdutos--------------------------------
+
+app.MapPost("/Produtos", async (Produto produto, AppDbContext db) =>
+{
+    db.Produtos.Add(produto);
+    await db.SaveChangesAsync();
+    return Results.Created($"/categorias/{produto.ProdutoId}", produto);
+});
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
