@@ -1,6 +1,30 @@
-﻿namespace MiniApiCatalogo.Services
+﻿using Microsoft.IdentityModel.Tokens;
+using MiniApiCatalogo.Models;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace MiniApiCatalogo.Services
 {
-    public class TokenServices
+    public class TokenServices : ITokenService
     {
+        public string GetToken(string key, string issuer, string audience, UserModel user)
+        {
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.Name,user.UserName),
+                new Claim(ClaimTypes.NameIdentifier,Guid.NewGuid().ToString())
+            };
+            var securityKey= new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
+
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+            var token = new JwtSecurityToken(issuer: issuer, audience: audience, claims: claims, expires:
+                DateTime.Now.AddMinutes(60), signingCredentials: credentials);
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var strinToken = tokenHandler.WriteToken(token); 
+            return strinToken;
+        }
     }
 }

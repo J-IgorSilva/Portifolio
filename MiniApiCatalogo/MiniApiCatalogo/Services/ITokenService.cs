@@ -1,4 +1,6 @@
-﻿namespace MiniApiCatalogo.Services
+﻿using MiniApiCatalogo.Models;
+
+namespace MiniApiCatalogo.Services
 {
     public interface ITokenService
     {
