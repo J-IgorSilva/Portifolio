@@ -40,54 +40,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-//----------EndpoitLogin--------
 
-app.MapPost("/login", [AllowAnonymous] (UserModel useModel, ITokenService tokenService) =>
-{
-    if (useModel == null)
-    {
-        return Results.BadRequest("Login Invalido");
-    }
-    if (useModel.UserName == "igor" && useModel.Password == "19101993")
-    {
-        var tokenString = tokenService.GerarToken(app.Configuration["Jwt:Key"], app.Configuration["Jwt:Issuer"],
-            app.Configuration["Jwt:Audience"], useModel);
-        return Results.Ok(new { token = tokenString });
-    }
-    else
-    {
-        return Results.BadRequest("Login Invalido");
-    }
-}).Produces(StatusCodes.Status400BadRequest).Produces(StatusCodes.Status200OK).WithName("Login").WithTags("Authentication");
-
-app.MapGet("/", () => "Catalogo de Produtos");
-
-app.MapPost("/categorias", async (Categoria categoria, AppDbContext db) =>
-{
-    db.Categorias.Add(categoria);
-    await db.SaveChangesAsync();
-    return Results.Created($"/categorias/{categoria.CategoriaId}", categoria);
-});
-
-app.MapGet("/categorias", async (AppDbContext db) => await db.Categorias.ToListAsync()).RequireAuthorization();
-
-
-app.MapPut("/categorias/{ id:int}", async (int id, Categoria categoria, AppDbContext db) =>
-{
-    if (categoria.CategoriaId != id)
-    {
-        return Results.NotFound();
-    }
-    var categoriaDb = await db.FindAsync<Categoria>(id);
-    if (categoriaDb != null)
-    {
-        return Results.NotFound(categoriaDb);
-    }
-    categoriaDb.Nome = categoria.Nome;
-    categoriaDb.Descricao = categoria.Descricao;
-    await db.SaveChangesAsync();
-    return Results.Ok(id);
-});
 
 
 //-------------EndPoitProdutos--------------------------------
